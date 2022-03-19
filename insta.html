@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <input type="text" placeholder="Enter Text" id="text" />
+
+    <button onclick="xyz()">Enter</button>
+    <h4 id="demo"></h4>
+    <h4 id="date"></h4>
+  </body>
+</html>
+<script> 
+  var text = document.getElementById("text").value;
+  var n = text.length;
+
+  function ReverseString(str) {
+    if (!str || str.length < 2 || typeof str !== "string") {
+      return "Not valid";
+    }
+    const revArray = [];
+    const length = str.length - 1;
+
+    for (let i = length; i >= 0; i--) {
+      revArray.push(str[i]);
+    }
+
+    return revArray.join("");
+  }
+
+  function showDiv1() {
+    var y = document.getElementById("text").value;
+    var z = document.getElementById("date");
+
+    document.getElementById("demo").innerHTML = ReverseString(y);
+    z.innerHTML = new Date();
+    // var x = document.getElementById("demo").innerHTML = (`${text}`);
+  }
+
+  function xyz() {
+    var y = document.getElementById("text").value;
+    let x = y.length;
+    setTimeout("showDiv1()", x * 1000);
+  }
+
+  setInterval(function () {
+    var date = new Date();
+    if (date.getDate() === 18 && date.getHours() === 13 && date.getMinutes === 07) {
+        alert("Surprise!!")
+    }
+}, 1000)
+</script>
